@@ -6,13 +6,13 @@ export const useAuthStore = defineStore('authStore', () => {
 
   const isLoggedIn = computed(() => currentUser.value.trim().length > 0)
 
-  function login(username: string): void {
+  function login(username) {
     const cleanName = username.trim()
     currentUser.value = cleanName
     localStorage.setItem('currentUser', cleanName)
   }
 
-  function logout(): void {
+  function logout() {
     currentUser.value = ''
     localStorage.removeItem('currentUser')
   }
